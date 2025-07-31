@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <ul>
+    {% for data in response_data %}
+    <li><a href="{% url 'overview_url' data %}">{{ data | title}}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

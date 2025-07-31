@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %} 野路コレクション {% endblock %}</title>
+    <link rel='stylesheet' href='{% static 'base.css' %}'>
+</head>
+<body>
+    <header> 
+        <nav> 
+          <a href='{% url 'index_url' %}'>ホームへ戻る</a>
+        </nav>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>
+
+
+
