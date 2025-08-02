@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{% load static  %}
+
+{% block css_files %}
+<link rel='stylesheet' href='{% static 'start_page/index.css' %}'>
+{% endblock %} 
 
 {% block content %}
   <ul>
-    {% for data in response_data %}
-    <li><a href="{% url 'overview_url' data %}">{{ data | title}}</a></li>
+    {% for key, value in overview_items %}
+    <li><a href="{% url 'overview_url' key %}">{{ value }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}

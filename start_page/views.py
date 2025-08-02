@@ -11,7 +11,7 @@ overviews = {
 }
 
 def index(request):
-    index_list = list(overviews.keys())
+    # index_list = list(overviews.keys())
     # index_urls = " "
     # for index in index_list:
     #     index_path = reverse('overview_url', args=[index])
@@ -20,7 +20,7 @@ def index(request):
     # response_data = index_urls
     return render(request, 'start_page/index.html', {
         'team_name': '野路コレクション', 
-        'response_data': index_list
+        'overview_items': overviews.items()
     })
     
 

@@ -1,0 +1,27 @@
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li {
+    font-size: 3rem;
+}
+
+li a {
+  display: block;
+  border: 0.5rem solid black;
+  padding: 2rem 4rem; 
+  margin: 1rem;
+  border-radius: 10rem; 
+}
+
+li a:hover {
+  background-color: white;
+  color: rgb(99, 160, 230);
+
+}
+
+a {
+  text-decoration: none;
+}
