@@ -5,6 +5,6 @@
 <link rel='stylesheet' href='{% static 'start_page/start_page.css' %}'> 
 {% endblock %} 
 {% block content %}
-    <h1> {{ team_name }} </h1>
-    <h2>{{ overviews }}</h2>
+    {% comment %} <h1> {{ team_name }} </h1> {% endcomment %}
+    <h1>{{ overviews }}</h1>
 {% endblock %}    
