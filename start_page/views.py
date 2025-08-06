@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.urls import reverse
+from django.views import View
+from django.views.generic import TemplateView
+
+from .models import Result
 
 
 # Create your views here.
@@ -10,27 +14,25 @@ overviews = {
     'about_team' : 'チームについて'    
 }
 
-def index(request):
-    # index_list = list(overviews.keys())
-    # index_urls = " "
-    # for index in index_list:
-    #     index_path = reverse('overview_url', args=[index])
-    #     index_urls += f'<li><a href="{index_path}">{index}</a></li>'
-    
-    # response_data = index_urls
-    return render(request, 'start_page/index.html', {
-        'team_name': '野路コレクション', 
-        'overview_items': overviews.items()
-    })
-    
 
-
-def report(request, links):
-    try:
-        overview = overviews[links]
-        return render(request, 'start_page/start_page.html', {
-            'team_name': '野路コレクション', 
-            'overviews': overview
-        })
-    except:
-        return HttpResponseNotFound('こちらのページは見つかりませんでした')
+class IndexView(TemplateView):
+    template_name = 'start_page/index.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["team_name"] = '野路コレクション'
+        context['overview_items'] = overviews.items()
+        return context
+    
+    
+class ReportView(View):
+    def get(self, request, links):
+        try:
+            overview = overviews[links]
+            results = Result.objects.all()
+            return render(request, 'start_page/start_page.html', {
+                'overviews': overview,
+                'results': results
+            })
+        except KeyError:
+            raise Http404('Page not found')
+        
