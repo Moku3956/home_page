@@ -7,3 +7,22 @@ h1 {
 h2 {
     font-size: 3rem;
 }
+
+.result_container {
+  display: flex;
+  justify-content: center;  
+  gap: 1rem;                 
+  padding: 0;
+  list-style: none;         
+  flex-wrap: wrap;         
+}
+
+.detail_container {
+  width: 300px;
+  border: 1px solid black;
+  padding: 1rem;
+  text-align: left;
+  background-color: pink;
+}
+
+

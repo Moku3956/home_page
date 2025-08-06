@@ -13,7 +13,7 @@ round_choices = [
     ]
 
 class Result(models.Model):
-    data = models.DateField()
+    date = models.DateField()
     convention = models.CharField(max_length=100)
     round = models.CharField(
         choices= round_choices,
@@ -21,7 +21,7 @@ class Result(models.Model):
     )
     opponent = models.CharField(max_length=50)
     score = models.CharField(max_length=10)
-    comment = models.TextField(blank=True)
+    # comment = models.TextField(blank=True)
     
     def __str__(self):
-        return f'{self.data} {self.convention} {self.get_round_display()}  vs{self.opponent}'
+        return f'{self.date} {self.convention} {self.get_round_display()}  vs{self.opponent}'
