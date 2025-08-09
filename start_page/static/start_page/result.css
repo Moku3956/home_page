@@ -1,0 +1,45 @@
+h1 {
+    display: flex;
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+.result_container {
+  display: flex;
+  justify-content: center;  
+  gap: 1rem;                 
+  padding: 0;
+  list-style: none;         
+  flex-wrap: wrap;         
+}
+
+.detail_container {
+  width: 300px;
+  border: 1px solid black;
+  padding: 1rem;
+  text-align: left;
+  line-height: 3rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.detail_container {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  padding: 24px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail_container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.detail_container strong {
+  margin-left: 1em; 
+}

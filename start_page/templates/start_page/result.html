@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block css_files %}
+<link rel='stylesheet' href='{% static 'start_page/result.css' %}'> 
+{% endblock %} 
+{% block content %}
+    <h1>{{ overviews }}</h1>
+    <ul class='result_container'>    
+    {% for result in results %}
+        <li class='detail_container'>
+            日付      <strong>{{ result.date | date:"Y-m-d" }}</strong><br>
+            大会名    <strong>{{ result.convention  }}</strong><br>
+            ラウンド  <strong>{{ result.get_round_display }}</strong><br>
+            対戦相手  <strong>{{ result.opponent }}</strong><br>
+            スコア    <strong>{{ result.score }}</strong><br>
+            {% comment %} コメント  <br>
+                     {{ result.comment }}<br> {% endcomment %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}    

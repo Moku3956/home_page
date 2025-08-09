@@ -10,6 +10,6 @@ html {
 }
 
 body {
-    background-color: pink;
+  background: linear-gradient(30deg, #fce4ec 70%, #f8bbd0 100%);
 }
 

@@ -3,7 +3,6 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.urls import reverse
 from django.views import View
 from django.views.generic import TemplateView
-
 from .models import Result
 
 
@@ -29,7 +28,7 @@ class ReportView(View):
         try:
             overview = overviews[links]
             results = Result.objects.all()
-            return render(request, 'start_page/start_page.html', {
+            return render(request, 'start_page/result.html', {
                 'overviews': overview,
                 'results': results
             })
