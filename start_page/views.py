@@ -40,5 +40,5 @@ class AboutTeamView(View):
     def get(self, request):
         return render(request, 'start_page/about_team.html', {
             'team_name': '野路コレクション',
-            'team_description': '野路コレクションは、地域の若手選手を育成することを目的としたサッカーチームです。'
+            'team_description': '野路コレクションは、立命館大学びわこ・くさつキャンパスのサッカーサークルです。'
         })
