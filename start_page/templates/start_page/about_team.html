@@ -4,3 +4,20 @@
 {% block css_files %}
 <link rel='stylesheet' href='{% static 'start_page/about_team.css' %}'> 
 {% endblock %} 
+
+{% block content %}
+    <h1>チームについて</h1>
+    <div class='team_info'>
+        <h2>{{ team_name }}</h2>
+        <p>{{ team_description }}</p>
+    </div>
+    <div class='team_members'>
+        <h3>メンバー</h3>
+        <ul>
+            <li>選手A</li>
+            <li>選手B</li>
+            <li>選手C</li>
+            <!-- 他のメンバーを追加 -->
+        </ul>
+    </div>
+{% endblock %} 

@@ -10,7 +10,8 @@ from .models import Result
 
 overviews = {
     'results' : '試合結果',
-    'about_team' : 'チームについて'    
+    'about_team' : 'チームについて',
+    'Instagram' : 'インスタ'
 }
 
 
@@ -35,3 +36,9 @@ class ReportView(View):
         except KeyError:
             raise Http404('Page not found')
         
+class AboutTeamView(View):
+    def get(self, request):
+        return render(request, 'start_page/about_team.html', {
+            'team_name': '野路コレクション',
+            'team_description': '野路コレクションは、地域の若手選手を育成することを目的としたサッカーチームです。'
+        })

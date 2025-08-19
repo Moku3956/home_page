@@ -3,5 +3,6 @@ from . import views
 from .views import IndexView, ReportView
 urlpatterns = [
     path('', IndexView.as_view(), name='index_url'),
+    path('about_team/', views.AboutTeamView.as_view(), name='about_team_url'),
     path('<str:links>', ReportView.as_view(), name='overview_url')
 ]

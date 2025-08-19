@@ -8,7 +8,22 @@
 {% block content %}
   <ul>
     {% for key, value in overview_items %}
-    <li><a href="{% url 'overview_url' key %}">{{ value }}</a></li>
-    {% endfor %}
+      <li>
+        {% if key == 'about_team' %}
+          <a href="{% url 'about_team_url' %}">{{ value }}</a>
+        {% endif %}
+      </li>   
+      <li>
+        {% if key == 'results' %}
+          <a href="{% url 'overview_url' key %}">{{ value }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}  
+      <li>
+          <a href="https://www.instagram.com/collected.noji_official" target="_blank" rel="noopener noreferrer">
+               インスタはこちら
+          </a>
+      </li>
+ 
   </ul>
 {% endblock %}
