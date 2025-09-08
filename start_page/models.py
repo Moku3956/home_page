@@ -20,7 +20,10 @@ class Result(models.Model):
         default= 'PRELIMINARY'
     )
     opponent = models.CharField(max_length=50)
-    score = models.CharField(max_length=10)
+    win_or_lose = models.CharField(
+        choices=[('WIN', '勝ち'), ('LOSE', '負け'), ('DRAW', '引き分け')], 
+        default='WIN')
+    score = models.CharField(max_length=20)
     # comment = models.TextField(blank=True)
     
     def __str__(self):

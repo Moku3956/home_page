@@ -6,15 +6,15 @@
 {% endblock %} 
 {% block content %}
     <h1>{{ overviews }}</h1>
-    <ul class='result_container'>    
-    {% for result in results %}
-        <li class='detail_container'>
-            日付      <strong>{{ result.date | date:"Y-m-d" }}</strong><br>
-            大会名    <strong>{{ result.convention  }}</strong><br>
-            ラウンド  <strong>{{ result.get_round_display }}</strong><br>
-            対戦相手  <strong>{{ result.opponent }}</strong><br>
-            スコア    <strong>{{ result.score }}</strong><br>
-        </li>
-    {% endfor %}
-    </ul>
+    <div class="container">  
+      {% for result in results %}
+        <div class="detail_container">
+          <div>日付 <strong>{{ result.date|date:"Y-m-d" }}</strong></div>
+          <div>大会名 <strong>{{ result.convention }}</strong></div>
+          <div>ラウンド <strong>{{ result.get_round_display }}</strong></div>
+          <div>対戦相手 <strong>{{ result.opponent }}</strong></div>
+          <div>スコア <strong>{{ result.score }}</strong></div>
+        </div>
+      {% endfor %}
+    </div>
 {% endblock %}    
