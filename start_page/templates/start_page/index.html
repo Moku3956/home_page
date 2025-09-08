@@ -6,7 +6,8 @@
 {% endblock %} 
 
 {% block content %}
-<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
+<div class="container">
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
@@ -14,32 +15,29 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <img src="{% static 'start_page/images/results_image.png' %}" class="d-block w-100" alt="写真1">
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <h1>何か文章、単語入れれます。</h1>
+            <p class="opacity-75">何か文章、単語入れれます。</p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <img src="{% static 'start_page/images/leader_image.png' %}" class="d-block w-100" alt="写真1">
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <h1>何か文章、単語入れれます。</h1>
+            <p>何か文章、単語入れれます。</p>
           </div>
         </div>
       </div>
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <img src="{% static 'start_page/images/results_image.png' %}" class="d-block w-100" alt="写真1">
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            <h1>何か文章、単語入れれます。</h1>
+            <p>何か文章、単語入れれます。</p>
           </div>
         </div>
       </div>
@@ -53,14 +51,17 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-<div class="container">
+</div>
+
+  
+<div class="card-container">
     {% for key, value in overview_items %}
         {% if key == 'about_team' %}
          <div class="card" style="width: 18rem;"> 
           <a href="{% url 'about_team_url' %}">
-           <img src="{% static 'start_page/results_image.png' %}" class="card-img-top" alt="...">
+           <img src="{% static 'start_page/images/results_image.png' %}" class="card-img-top" alt="...">
            <div class="card-body">
-             <button type="button" class="btn btn-primary">{{ value }}</button>
+             <button type="button" class="btn btn-primary"><i class="bi bi-microsoft-teams"></i> {{ value }} </button>
            </div> 
           </a>
          </div>
@@ -68,9 +69,9 @@
         {% if key == 'results' %}
           <div class="card" style="width: 18rem;">
             <a href="{% url 'overview_url' key %}">
-            <img src="{% static 'start_page/results_image.png' %}" class="card-img-top" alt="...">
+            <img src="{% static 'start_page/images/results_image.png' %}" class="card-img-top" alt="...">
             <div class="card-body">
-              <button type="button" class="btn btn-primary">{{ value }}</button>
+              <button type="button" class="btn btn-primary"><i class="bi bi-trophy"></i> {{ value }} </button>
             </div>
             </a>
           </div>
@@ -78,9 +79,9 @@
     {% endfor %}  
     <div class="card" style="width: 18rem;">
       <a href="https://www.instagram.com/collected.noji_official" target="_blank" rel="noopener noreferrer">
-      <img src="{% static 'start_page/results_image.png' %}" class="card-img-top" alt="...">
+      <img src="{% static 'start_page/images/results_image.png' %}" class="card-img-top" alt="...">
       <div class="card-body">
-        <button type="button" class="btn btn-primary">インスタはこちら</button>
+        <button type="button" class="btn btn-primary"><i class="bi bi-instagram"></i> インスタへ </button>
       </div> 
       </a>
     </div>
